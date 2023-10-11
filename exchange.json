@@ -1,0 +1,20 @@
+{
+  "main": "s-employee.raml",
+  "name": "s-employee",
+  "groupId": "fc852681-0d06-40b5-ba58-f4e8be6ba0aa",
+  "assetId": "s-employee",
+  "version": "1.0.4",
+  "classifier": "raml",
+  "tags": [],
+  "descriptorVersion": "1.0.0",
+  "organizationId": "fc852681-0d06-40b5-ba58-f4e8be6ba0aa",
+  "apiVersion": "v1",
+  "originalFormatVersion": "1.0",
+  "dependencies": [
+    {
+      "groupId": "fc852681-0d06-40b5-ba58-f4e8be6ba0aa",
+      "assetId": "client-id-enforcement",
+      "version": "1.0.0"
+    }
+  ]
+}

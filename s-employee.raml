@@ -1,0 +1,68 @@
+#%RAML 1.0
+title: Employee Management
+version: v1
+
+description: It will interacts with employee database.
+baseUri: www.employeeManagement.com/{version}
+
+mediaType: 
+- application/json
+protocols:
+  - HTTP
+  - HTTPS
+
+traits:
+  errorResponse : !include Traits/error-response-Trait.raml
+  basicAuth: !include /exchange_modules/fc852681-0d06-40b5-ba58-f4e8be6ba0aa/client-id-enforcement/1.0.0/client-id-enforcement.raml
+
+types:
+  EmpDataType: !include DataTypes/employeeDataType.raml
+
+resourceTypes:
+    employeeResourceType: !include customResourceType.raml
+
+
+/employees:
+  is: [errorResponse]
+  get:
+  post:
+    is : [basicAuth]
+  type:
+    employeeResourceType:
+      getDescription: "This is used to fetch all Employees"
+      getResponseType: EmpDataType[]
+      getResponseExample: !include Examples/customersGetResExample.raml
+      postDescription: "This is used to create new employee"
+      postRequestType: EmpDataType
+      postRequestExample: !include Examples/customerPostReqExample.raml
+
+  /{Id}:
+    is: [basicAuth]
+    get:   
+    delete:
+    type: 
+      employeeResourceType:
+        getDescription: "This is used to fetch complete details of specific employee"
+        getResponseType: EmpDataType
+        getResponseExample: !include Examples/customerGetResExample.raml
+        deleteDescription: "This is used to delete the specific employee "
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+
+
+                
+                             
+            
